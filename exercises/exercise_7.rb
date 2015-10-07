@@ -10,7 +10,7 @@ puts "Exercise 7"
 puts "----------"
 
 puts "Enter store name"
-store_name = gets.chomp
+user_input = gets.chomp
 
-store_error = Store.create(name: "#{store_name}")
-store_error.errors.each{|attr,msg| puts "#{attr} - #{msg}" }
+store = Store.create(name: "#{user_input}")
+store.errors.full_message
